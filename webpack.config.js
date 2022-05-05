@@ -1,12 +1,13 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
-const deps = require('./package.json').dependencies;
-
 module.exports = {
   mode: 'development',
+  output: {
+    publicPath: 'auto'
+  },
   devServer: {
-    port: 8081 // Port in each micro frontend in which will running
+    port: 8080 // Port in each micro frontend in which will running
   },
   module: {
     rules: [
@@ -33,17 +34,14 @@ module.exports = {
       name: 'CONTAINER',
       filename: 'remoteEntry.js',
       remotes: {
-        MF1: 'CRIPTOS@https://gmo-micro-frontends.s3.amazonaws.com/cripto-list/dist/v2/remoteEntry.js',
-        MF2: 'MF2@https://microjosegaston.s3.us-west-1.amazonaws.com/MF2/remoteEntry.js',
-        MF3: 'NEWSCRIPTOS@https://jejeje124.herokuapp.com/remoteEntry.js'
+        CRIPTOS: 'CRIPTOS@http://localhost:8081/remoteEntry_list.js',
+        NEWSCRIPTOS: 'NEWSCRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/criptos-news/remoteEntry_news.js',
+        MF2: 'MF2@https://microjosegaston.s3.us-west-1.amazonaws.com/MF2/remoteEntry.js'
       },
-      shared: [{
-        ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react
-        }
-      }]
+      shared: ['react']
     })
-  ]
+  ],
+  optimization: {
+    splitChunks: false
+  }
 };
