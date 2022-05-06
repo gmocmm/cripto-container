@@ -3,7 +3,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 
 import ErrorFallback from '../../components/ErrorFallback';
 
-const CriptoNews = React.lazy(() => import('NEWSCRIPTOS/CriptoNews'));
+const CriptosNewsDetails = React.lazy(() => import('NEWSCRIPTOS/CriptosNewsDetails'));
 
 export default function News () {
   return (
@@ -13,7 +13,7 @@ export default function News () {
           FallbackComponent={ErrorFallback}
           onReset={() => {}}
         >
-          <CriptoNews />
+          <CriptosNewsDetails />
         </ErrorBoundary>
       </React.Suspense>
     </Fragment>

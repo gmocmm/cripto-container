@@ -1,6 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
 
+const deps = require('./package.json').dependencies;
+
 module.exports = {
   mode: 'development',
   output: {
@@ -32,13 +34,14 @@ module.exports = {
     }),
     new ModuleFederationPlugin({
       name: 'CONTAINER',
-      filename: 'remoteEntry.js',
+      filename: 'remoteEntry_container.js',
       remotes: {
         CRIPTOS: 'CRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/criptos-list/remoteEntry_list.js',
-        NEWSCRIPTOS: 'NEWSCRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/criptos-news/remoteEntry.js',
-        MF2: 'MF2@https://microjosegaston.s3.us-west-1.amazonaws.com/MF2/remoteEntry.js'
+        NEWSCRIPTOS: 'NEWSCRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/criptos-news/remoteEntry_news.js'
       },
-      shared: ['react']
+      shared: {
+        react: { singleton: true, requiredVersion: deps.react, eager: true }
+      }
     })
   ],
   optimization: {
