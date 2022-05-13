@@ -1,11 +1,11 @@
 import React, { Fragment } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
-import ErrorFallback from './../../components/ErrorFallback';
+import ErrorFallback from '../../components/ErrorFallback';
 
-const CriptosList = React.lazy(() => import('CRIPTOS/CriptosList'));
+const MicroFrontendApp = React.lazy(() => import('GRAFHCRIPTOS/MicroFrontendApp'));
 
-export default function index () {
+export default function News () {
   return (
     <Fragment>
       <React.Suspense fallback='Loading ...'>
@@ -13,7 +13,7 @@ export default function index () {
           FallbackComponent={ErrorFallback}
           onReset={() => {}}
         >
-          <CriptosList />
+          <MicroFrontendApp asset={'SOL'} />
         </ErrorBoundary>
       </React.Suspense>
     </Fragment>
