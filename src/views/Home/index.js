@@ -5,7 +5,7 @@ import ErrorFallback from './../../components/ErrorFallback';
 
 const CriptosList = React.lazy(() => import('CRIPTOS/CriptosList'));
 
-export default function index () {
+export default function index ({ history }) {
   return (
     <Fragment>
       <React.Suspense fallback='Loading ...'>
@@ -13,7 +13,7 @@ export default function index () {
           FallbackComponent={ErrorFallback}
           onReset={() => {}}
         >
-          <CriptosList />
+          <CriptosList history={ history } />
         </ErrorBoundary>
       </React.Suspense>
     </Fragment>
