@@ -39,7 +39,8 @@ module.exports = {
       remotes: {
         CRIPTOS: 'CRIPTOS@http://192.168.100.67:8081/remoteEntry_list.js',
         NEWSCRIPTOS: 'NEWSCRIPTOS@http://192.168.100.67:8082/remoteEntry_news.js',
-        GRAFHCRIPTOS: 'GRAFHCRIPTOS@http://192.168.100.67:8083/remoteEntry_graph.js'
+        GRAFHCRIPTOS: 'GRAFHCRIPTOS@http://192.168.100.67:8083/remoteEntry_graph.js',
+        helloVue: 'helloVue@http://localhost:8082/remoteEntry.js'
       },
       shared: {
         react: { singleton: true, requiredVersion: deps.react, eager: true }
