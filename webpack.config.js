@@ -37,9 +37,11 @@ module.exports = {
       name: 'CONTAINER',
       filename: 'remoteEntry_container.js',
       remotes: {
-        CRIPTOS: 'CRIPTOS@http://192.168.100.67:8081/remoteEntry_list.js',
-        NEWSCRIPTOS: 'NEWSCRIPTOS@http://192.168.100.67:8082/remoteEntry_news.js',
-        GRAFHCRIPTOS: 'GRAFHCRIPTOS@http://192.168.100.67:8083/remoteEntry_graph.js'
+        CRIPTOS: 'CRIPTOS@http://localhost:8081/remoteEntry_list.js',
+        NEWSCRIPTOS: 'NEWSCRIPTOS@http://localhost:8084/remoteEntry_news.js',
+        GRAFHCRIPTOS: 'GRAFHCRIPTOS@http://localhost:8083/remoteEntry_graph.js',
+        helloVue: 'helloVue@http://localhost:8082/remoteEntry.js',
+        angularTest: 'angularTest@http://localhost:4203/remoteEntry_Angular.js'
       },
       shared: {
         react: { singleton: true, requiredVersion: deps.react, eager: true }
