@@ -1,11 +1,14 @@
 import React, { Fragment } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
+import { useParams } from 'react-router-dom';
 
 import ErrorFallback from '../../components/ErrorFallback';
 
-const CriptosNews = React.lazy(() => import('NEWSCRIPTOS/CriptosNews'));
+const MicroFrontendApp = React.lazy(() => import('GRAFHCRIPTOS/MicroFrontendApp'));
 
 export default function News () {
+  const { criptoId } = useParams();
+
   return (
     <Fragment>
       <React.Suspense fallback='Loading ...'>
@@ -13,7 +16,7 @@ export default function News () {
           FallbackComponent={ErrorFallback}
           onReset={() => {}}
         >
-          <CriptosNews items="BTC" apiKeyNumber={1} />
+          <MicroFrontendApp asset={ criptoId } />
         </ErrorBoundary>
       </React.Suspense>
     </Fragment>
