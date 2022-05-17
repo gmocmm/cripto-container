@@ -37,9 +37,9 @@ module.exports = {
       name: 'CONTAINER',
       filename: 'remoteEntry_container.js',
       remotes: {
-        CRIPTOS: 'CRIPTOS@http://192.168.100.67:8081/remoteEntry_list.js',
-        NEWSCRIPTOS: 'NEWSCRIPTOS@http://192.168.100.67:8082/remoteEntry_news.js',
-        GRAFHCRIPTOS: 'GRAFHCRIPTOS@http://192.168.100.67:8083/remoteEntry_graph.js'
+        CRIPTOS: 'CRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/list/remoteEntry_list.js',
+        NEWSCRIPTOS: 'NEWSCRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/news/remoteEntry_news.js',
+        GRAFHCRIPTOS: 'GRAFHCRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/chart/remoteEntry_graph.js'
       },
       shared: {
         react: { singleton: true, requiredVersion: deps.react, eager: true }
