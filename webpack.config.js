@@ -41,7 +41,7 @@ module.exports = {
         NEWSCRIPTOS: 'NEWSCRIPTOS@http://localhost:8084/remoteEntry_news.js',
         GRAFHCRIPTOS: 'GRAFHCRIPTOS@http://localhost:8083/remoteEntry_graph.js',
         helloVue: 'helloVue@http://localhost:8082/remoteEntry.js',
-        angularTest: 'angularTest@http://localhost:4203/remoteEntry_Angular.js'
+        angularTest: 'angularTest@http://localhost:4200/remoteEntry_Angular.js'
       },
       shared: {
         react: { singleton: true, requiredVersion: deps.react, eager: true }
