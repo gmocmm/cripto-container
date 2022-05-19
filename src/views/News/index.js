@@ -67,6 +67,9 @@ export default () => {
           
         </Grid>
         <Grid item xs={10} sm={10} md={10} xl={10} style={{padding: '5px'}}>
+          <Typography>
+            Vue app
+          </Typography>
           <div ref={ref} />
         </Grid>
         <Grid item xs={1} sm={1} md={1} xl={1} >

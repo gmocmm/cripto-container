@@ -9,6 +9,7 @@ import {AppBar, CardMedia, Typography, Button, IconButton, Grid,
 
 import ErrorFallback from '../../components/ErrorFallback';
 
+const CriptosNews = React.lazy(() => import('NEWSCRIPTOS/CriptosNews'));
 const MicroFrontendApp = React.lazy(() => import('GRAFHCRIPTOS/MicroFrontendApp'));
 
 export default function News () {
@@ -32,6 +33,31 @@ export default function News () {
               <MicroFrontendApp asset={ criptoId } style={{with: '100% !important'}}/>
             </ErrorBoundary>
         </React.Suspense>
+
+        </Grid>
+        <Grid item xs={1} sm={1} md={1} xl={1} >
+          
+        </Grid>
+        
+      </Grid>
+      <Grid container spacing={1} style={{ marginTop: '2rem', possition: 'absolute', buttom: '0px'}}>
+        <Grid item xs={1} sm={1} md={1} xl={1}  >
+          
+        </Grid>
+
+        <Grid item xs={10} sm={10} md={10} xl={10} style={{padding: '5px'}}>
+
+          <React.Suspense fallback='Loading ...'>
+            <ErrorBoundary
+              FallbackComponent={ErrorFallback}
+              onReset={() => {}}
+            >
+              <CriptosNews items={criptoId} apiKeyNumber={2} />
+              {/* <CriptosList history={ history } /> */}
+
+              {/* <AngularApp/> */}
+            </ErrorBoundary>
+          </React.Suspense>
 
         </Grid>
         <Grid item xs={1} sm={1} md={1} xl={1} >
