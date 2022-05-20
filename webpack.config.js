@@ -39,7 +39,12 @@ module.exports = {
       remotes: {
         CRIPTOS: 'CRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/list/remoteEntry_list.js',
         NEWSCRIPTOS: 'NEWSCRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/news/remoteEntry_news.js',
-        GRAFHCRIPTOS: 'GRAFHCRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/chart/remoteEntry_graph.js'
+        GRAFHCRIPTOS: 'GRAFHCRIPTOS@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/chart/remoteEntry_graph.js',
+        helloVue: 'helloVue@https://gmo-micro-frontends.s3.us-east-1.amazonaws.com/vue/remoteEntry.js'
+        // CRIPTOS: 'CRIPTOS@http://localhost:8081/remoteEntry_list.js',
+        // NEWSCRIPTOS: 'NEWSCRIPTOS@http://localhost:8082/remoteEntry_news.js',
+        // GRAFHCRIPTOS: 'GRAFHCRIPTOS@http://192.168.100.67:8083/remoteEntry_graph.js',
+        // angularTest: 'angularTest@http://localhost:4200/remoteEntry_Angular.js'
       },
       shared: {
         react: { singleton: true, requiredVersion: deps.react, eager: true }
