@@ -41,7 +41,7 @@ export default function Chart () {
               FallbackComponent={ErrorFallback}
               onReset={() => {}}
             >
-              <CriptosNews items={criptoId} apiKeyNumber={2} />
+              <CriptosNews items={criptoId} apiKeyNumber={3} />
             </ErrorBoundary>
           </React.Suspense>
 
